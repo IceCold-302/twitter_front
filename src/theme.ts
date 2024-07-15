@@ -5,7 +5,7 @@ const theme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    height: "80vh"
+                    minHeight: "8vh"
                 }
             },
         }

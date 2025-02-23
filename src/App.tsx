@@ -1,23 +1,7 @@
 import { AppBar as MUIAppBar, Avatar, styled, ButtonGroup, Button, IconButton } from '@mui/material'
 import Logo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
-import AddIcon from '@mui/icons-material/Add';
-function App() {
-  const navigate = useNavigate()
-  return (
-    <AppBar position='static'>
-        <Avatar src={Logo}></Avatar>
-        <ButtonGroup>
-          <Button variant='contained' color='primary' onClick={() => navigate('/tweets')}>
-            Tweets
-          </Button>
-          <IconButton onClick={() => navigate('/tweets/new')}>
-            <AddIcon color='error' />
-          </IconButton>
-        </ButtonGroup>
-    </AppBar>
-  )
-}
+import AddIcon from "@mui/icons-material/Add";
 
 
 const AppBar = styled(MUIAppBar)({
@@ -35,4 +19,25 @@ const AppBar = styled(MUIAppBar)({
     margin: "12px"
   }
 })
-export default App
+
+function App() {
+  const navigate = useNavigate();
+  return (
+    <AppBar position="static">
+      <Avatar onClick={() => navigate("/")} src={Logo}></Avatar>
+      <ButtonGroup>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/tweets")}
+        >
+          Tweets
+        </Button>
+        <IconButton onClick={() => navigate("/tweets/new")}>
+          <AddIcon color="error" />
+        </IconButton>
+      </ButtonGroup>
+    </AppBar>
+  );
+}
+export default App;
